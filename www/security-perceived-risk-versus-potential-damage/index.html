@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <title>Blog &raquo; motoma.io</title>
+  <base href="../../" />
+
+  <meta name="generator" content="Blagmaster" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="static/layout.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="/">
+      <img src="static/motoma.io.32.inverted.eps.png" alt="motoma.io" text="motoma.io" />
+    </h1></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="link">
+        <a href="/about/" title="Learn more about me" class="link">About</a>
+      </li>
+        
+      <li class="current">
+        <a href="/" title="Goto the blog" class="current">Blog</a>
+      </li>
+        
+      <li class="link">
+        <a href="/rant/" title="Read my rants" class="link">Rant</a>
+      </li>
+    </ul>
+
+    <section>
+      <a href="http://www.linkedin.com/in/motoma">
+	<img src="static/linkedin.png" /></a>
+      <a href="http://www.facebook.com/motoma">
+	<img src="static/facebook.png" /></a>
+      <a href="http://www.twitter.com/motoma">
+	<img src="static/twitter.png" /></a>
+      <a href="http://gplus.to/motoma">
+	<img src="static/gplus.png" /></a>
+      <a href="http://www.github.com/motoma">
+	<img src="static/github.png" /></a>
+    </section>
+  </nav>
+
+  <section class="content">
+  
+    <article>
+      <h3><a href="/security-perceived-risk-versus-potential-damage/">Security: Perceived Risk versus Potential Damage</a></h3>
+      
+<p>All too often, while running the PHP forum on The Scripts, I see students working who are completely ignorant of the security concerns prevalent with the systems that they build. Worse, when alerted to the potential dangers associated with poor programming practices, these coders let loose a variety of excuses why their application doesn't need to implement a security policy. Ranging from "this is a low traffic/internal site" to "I'm doing this as a project for school, so security really isn't an issue." In my eyes all explanations are equally irrelevant. As leaders of the forums, my colleagues and I daily battle assertions about the validity of these concerns.</p>
+
+<!-- break -->
+
+<p>Ultimately what one should focus on is not the perceived risk, but rather, the most important factor in any security system is the potential damage. If the level of risk is very low, either because the system is a low traffic site, or based on an internal network, that is still no reason to offset it with a low barrier of entry. Instead of assessing the likelihood of being hacked (which is far larger than most would guess), one must analyze the potential damage that a breach may cause. If someone gains elevated permissions and executes a DROP DATABASE on the back-end, is your system royally screwed? If someone gets a dump of the information held in the system, how much information about the system and your clients have they gotten ahold of? Can the information stored in the database be used to deal further (financial, emotional, or physical) damage to its users?</p>
+
+<p>To drive home the potency of this situation, here is a hypothetical situation:</p>
+
+<p>Company Co. is working on a companion application to the popular music software iTunes. The program is currently in open Beta and users can sign up and use the application for free, but it is still undergoing development. The software itself is nothing spectacular; as a companion to iTunes, it indexes your music library and matches your tastes in music with other users who listen to similar music. Not much information is kept about each user, only an email address, password, and list of songs on the user's computer, so security is not a high priority on the developer's todo list. For the time being Company Co. has opted out of SSL between the application front-end and the front-end server. In order to aid in the debugging process, passwords are stored as plain text in the database, and to improve the user experience, username and password are stored locally to expidite the process of logging in. The developers were not fools, so there is a tiered architecture between the application and the database; all connections are run through an application server, and the database is kept from outside access because it has no external IP address.</p>
+
+<p>The application described above certainly does not sound secure, but it is in beta testing and most of the people using it have heard about it through word of mouth or from the developers directly. The end user most certainly wont be stealing their own passwords from the file on their computer, will they? And if a user has someone sneaking on to their computer and stealing files, they have a bigger problem than just a password kicking around! If the user happens to fire up the application on a laptop in a public area, what have they lost? Do they really care that that geek in the corner knows they listen to Justin Timberlake? Big deal!</p>
+
+<p>While driving through the city, a kid decides to fire up the old laptop to see what movies are playing. Pulling into a parking lot, the kid quickly sees that Company Co. has a WEP encrypted wireless network. No worry for the kid though, there is a lot of traffic, so getting the IVs takes not more than a couple of minutes. Spiderman 3 is playing at the second run cinema, but while the laptop is running, why not fire up ethereal for kicks...what is this? The kid notices a lot of plain text traffic kicking around: curiosity must be its own rewards, so the kid investigates. After seeing a number of email addresses and passwords flying around the kid stumbles upon the yet to go live web server with an active download for the software. After a quick install and a bit of playing around the kid decides to test one of the logins snagged earlier against, not to the software, but to iTunes itself. Worked like magic: this user was lackadaisical in choosing passwords and used the same user name and password combination for both iTunes and the companion software! Pressing the user's credentials further the kid fires up PayPal and logs in successfully as well.  Depending on the attack vector, the vulnerabilities in this software can have a ranging scope of destruction. Sniffing at the user's end results in a user's credentials being compromised, while sniffing at the server's end results in a larger number of users having their information revealed. Further still, were the database to be compromised, the entire user base would be subject to damage, through the various online banking institutions.</p>
+
+<p>This danger does not lie solely in the imagination of security analysts and hackers. This threat is real. TJX lost over $1 billion out a wireless router which was set to use WEP security. Companies do store passwords in plain-text. People do use the same email address and password for multiple sites. Kids can read traffic as it passes through those beautiful tubes called the internet. The moral here is this: it is not the information that you hold, but rather what that information means to the people whom it is about.</p>
+
+<p>For further reading on the matter, Dark Readings had a sobering article titled <a title="Small Business: Hackers' Low-Hanging Fruit" href="http://www.darkreading.com/security/perimeter/showArticle.jhtml?articleID=208804784">Small Business: Hackers' Low-Hanging Fruit</a>. Webroot has a companion article about the <a title="unseen risk that SMBs are subject to" href="http://www.webroot.com/company/pressroom/pr/unaware-smb-at-risk.html">unseen risk that SMBs are subject to</a>. You can find out a little more about the TJX breach <a title="It Couldn't Happen to Us!" href="http://www.veracode.com/blog/2007/05/it-couldnt-happen-to-us/">here</a>.</p>
+
+    </article>
+  </section>
+
+  <aside>
+    <section class="projects">
+      <ul>
+	
+	<li class="odd">
+	  <a href="/https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
+	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
+	</li>
+	
+	<li class="even">
+	  <a href="/pyloris/">PyLoris</a>
+	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
+	</li>
+	
+	<li class="odd">
+	  <a href="/network-raid-storage-proof-of-concept/">Network RAID</a>
+	  <p>A Linux-based proof-of-concept technique for building software-RAIDs across disparate networked volumes.</p>
+	</li>
+	
+      </ul>
+    </section>
+
+    <section class="random">
+      <h4>/dev/urandom</h4>
+      <p>"There is no greater importance in all the world like knowing you are
+	right and that the wave of the world is wrong, yet the wave crashes 
+	upon you."</p>
+    </section>
+
+    <section class="links">
+      <h4>Blogs I Follow</h4>
+      <ul>
+        <li><a href="http://devlog.mahcuz.com/">Devlog</a></li>
+        <li><a href="http://www.eflorenzano.com/">Die in a Fire</a></li>
+        <li><a href="http://www.lostgarden.com">Lost Garden</a></li>
+        <li><a href="http://chargen.matasano.com">Matasano Chargen</a></li>
+        <li><a href="http://parsedcontent.blogspot.com">
+	    { Parsed Content }</a></li>
+        <li><a href="http://www.particlesinmotion.com">
+	    Particles in Motion</a></li>
+        <li><a href="http://www.schneier.com">Schneier on Security</a></li>
+        <li><a href="http://teddziuba.com/">Ted Dziuba</a></li>
+        <li><a href="http://rdist.root.org">root labs rdist</a></li>
+        <li><a href="http://www.veracode.com/blog">ZeroDay Labs</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h4>Web Comics</h4>
+      <ul>
+        <li><a href="http://www.eflorenzano.com/">Dresden Codak</a></li>
+        <li><a href="http://devlog.mahcuz.com/">XKCD</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <footer>
+    <p>motoma.io and all content therein is copyright of Christopher Gilbert 
+      — © 2012 All rights reserved.</p>
+  </footer>
+</body>
+</html>

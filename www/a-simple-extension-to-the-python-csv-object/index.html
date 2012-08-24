@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <title>Blog &raquo; motoma.io</title>
+  <base href="../../" />
+
+  <meta name="generator" content="Blagmaster" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="static/layout.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="/">
+      <img src="static/motoma.io.32.inverted.eps.png" alt="motoma.io" text="motoma.io" />
+    </h1></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="link">
+        <a href="/about/" title="Learn more about me" class="link">About</a>
+      </li>
+        
+      <li class="current">
+        <a href="/" title="Goto the blog" class="current">Blog</a>
+      </li>
+        
+      <li class="link">
+        <a href="/rant/" title="Read my rants" class="link">Rant</a>
+      </li>
+    </ul>
+
+    <section>
+      <a href="http://www.linkedin.com/in/motoma">
+	<img src="static/linkedin.png" /></a>
+      <a href="http://www.facebook.com/motoma">
+	<img src="static/facebook.png" /></a>
+      <a href="http://www.twitter.com/motoma">
+	<img src="static/twitter.png" /></a>
+      <a href="http://gplus.to/motoma">
+	<img src="static/gplus.png" /></a>
+      <a href="http://www.github.com/motoma">
+	<img src="static/github.png" /></a>
+    </section>
+  </nav>
+
+  <section class="content">
+  
+    <article>
+      <h3><a href="/a-simple-extension-to-the-python-csv-object/">A Simple Extension to the Python CSV Object</a></h3>
+      
+<p>One of the side effects of working with database driven software is that you eventually find yourself needing to pull in <a title="Petabyte" href="http://en.wikipedia.org/wiki/Petabyte">large amounts of information</a> from <a title="AS/400" href="http://en.wikipedia.org/wiki/AS/400">old</a> and <a title="Flat file database" href="http://en.wikipedia.org/wiki/Flat_file_database">terrible</a> systems. When talking to your counterparts on the other side of the line (the inter-company line, that is), you will invariably be told that you will only receive your data in one of a few <a title="CSV" href="http://en.wikipedia.org/wiki/Comma-separated_values">straight</a> <a title="Vertical bar" href="http://en.wikipedia.org/wiki/Vertical_bar">forward</a> <a title="Fixed width" href="http://en.wikipedia.org/wiki/Fixed_width">formats</a>. What follows is a small extension to Python's CSV object which streamlines the process of coding these data transformations.</p>
+
+<!-- break -->
+
+<p>Simply put, Python's CSV object is more than enough to handle any conversion; however, in order to make my life <span style="text-decoration: underline;">even simpler</span>, I made the following wrapper:</p>
+<script src="https://gist.github.com/589834.js?file=python-csvfilehandler.py"></script>
+
+<p>Here, the process accepts a function object, and an argument (tuple most likely). The CSVFileHandler object will execute the function on each line of the file, making the main loop of your processing code a meek 3 lines long. Take, for example, the following code:</p>
+<script src="https://gist.github.com/589837.js?file=python-csv-import.py"></script>
+
+<p>The code listing above quickly parses through that old CSV file and leaves with with a shiney new SQL data file to load into your database.</p>
+
+    </article>
+  </section>
+
+  <aside>
+    <section class="projects">
+      <ul>
+	
+	<li class="odd">
+	  <a href="/https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
+	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
+	</li>
+	
+	<li class="even">
+	  <a href="/pyloris/">PyLoris</a>
+	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
+	</li>
+	
+	<li class="odd">
+	  <a href="/network-raid-storage-proof-of-concept/">Network RAID</a>
+	  <p>A Linux-based proof-of-concept technique for building software-RAIDs across disparate networked volumes.</p>
+	</li>
+	
+      </ul>
+    </section>
+
+    <section class="random">
+      <h4>/dev/urandom</h4>
+      <p>"There is no greater importance in all the world like knowing you are
+	right and that the wave of the world is wrong, yet the wave crashes 
+	upon you."</p>
+    </section>
+
+    <section class="links">
+      <h4>Blogs I Follow</h4>
+      <ul>
+        <li><a href="http://devlog.mahcuz.com/">Devlog</a></li>
+        <li><a href="http://www.eflorenzano.com/">Die in a Fire</a></li>
+        <li><a href="http://www.lostgarden.com">Lost Garden</a></li>
+        <li><a href="http://chargen.matasano.com">Matasano Chargen</a></li>
+        <li><a href="http://parsedcontent.blogspot.com">
+	    { Parsed Content }</a></li>
+        <li><a href="http://www.particlesinmotion.com">
+	    Particles in Motion</a></li>
+        <li><a href="http://www.schneier.com">Schneier on Security</a></li>
+        <li><a href="http://teddziuba.com/">Ted Dziuba</a></li>
+        <li><a href="http://rdist.root.org">root labs rdist</a></li>
+        <li><a href="http://www.veracode.com/blog">ZeroDay Labs</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h4>Web Comics</h4>
+      <ul>
+        <li><a href="http://www.eflorenzano.com/">Dresden Codak</a></li>
+        <li><a href="http://devlog.mahcuz.com/">XKCD</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <footer>
+    <p>motoma.io and all content therein is copyright of Christopher Gilbert 
+      — © 2012 All rights reserved.</p>
+  </footer>
+</body>
+</html>

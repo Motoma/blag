@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <title>Blog &raquo; motoma.io</title>
+  <base href="../../" />
+
+  <meta name="generator" content="Blagmaster" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="static/layout.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="/">
+      <img src="static/motoma.io.32.inverted.eps.png" alt="motoma.io" text="motoma.io" />
+    </h1></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="link">
+        <a href="/about/" title="Learn more about me" class="link">About</a>
+      </li>
+        
+      <li class="current">
+        <a href="/" title="Goto the blog" class="current">Blog</a>
+      </li>
+        
+      <li class="link">
+        <a href="/rant/" title="Read my rants" class="link">Rant</a>
+      </li>
+    </ul>
+
+    <section>
+      <a href="http://www.linkedin.com/in/motoma">
+	<img src="static/linkedin.png" /></a>
+      <a href="http://www.facebook.com/motoma">
+	<img src="static/facebook.png" /></a>
+      <a href="http://www.twitter.com/motoma">
+	<img src="static/twitter.png" /></a>
+      <a href="http://gplus.to/motoma">
+	<img src="static/gplus.png" /></a>
+      <a href="http://www.github.com/motoma">
+	<img src="static/github.png" /></a>
+    </section>
+  </nav>
+
+  <section class="content">
+  
+    <article>
+      <h3><a href="/bridging-the-network-in-pure-python/">Bridging Networks in Pure Python</a></h3>
+      
+<p>Every now and then I find myself in a situation where the tools at hand are inappropriate, impeded, or impotent for the task at hand. Whether I am on a machine with insufficient privileges, behind a vindictive NAT, or under the opression of significant egress filtering, from time to time I find myself needing to bridge networks in order to get my work done.</p>
+
+<!-- break -->
+
+<p>There are various ways to do this, the most popular usually involves either <a href="http://en.wikipedia.org/wiki/Netcat">netcat</a> or <a href="http://en.wikipedia.org/wiki/Socat">socat</a>. When these tools are unavailable, I usually resort to a different technique which can be executed purely in Python. What follows are two snippets that I use to route traffic as I see fit.</p>
+
+<p>The first snippent is from my bridge server. This will run on a machine I control, on a port that I am able to access, both from my target server and from the client.</p>
+
+<script src="https://gist.github.com/1215469.js?file=bridged.py"></script>
+
+<p>From there, we build a reverse connection from the target server. This will connect our target service to the bridge we previously built.</p>
+
+<script src="https://gist.github.com/1215538.js?file=bridgec.py"></script>
+
+<p>In the theorhetical example above, pointing a MySQL client at the bridge server's port 8080 will route us to the MySQL database running on the bridge client's local network. A simple demonstration of a otherwise difficult task; this technique has helped me out in a number of different situations.</p>
+
+<p>I hope you find this as useful as I do,</p>
+<p>Motoma</p>
+
+    </article>
+  </section>
+
+  <aside>
+    <section class="projects">
+      <ul>
+	
+	<li class="odd">
+	  <a href="/https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
+	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
+	</li>
+	
+	<li class="even">
+	  <a href="/pyloris/">PyLoris</a>
+	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
+	</li>
+	
+	<li class="odd">
+	  <a href="/network-raid-storage-proof-of-concept/">Network RAID</a>
+	  <p>A Linux-based proof-of-concept technique for building software-RAIDs across disparate networked volumes.</p>
+	</li>
+	
+      </ul>
+    </section>
+
+    <section class="random">
+      <h4>/dev/urandom</h4>
+      <p>"There is no greater importance in all the world like knowing you are
+	right and that the wave of the world is wrong, yet the wave crashes 
+	upon you."</p>
+    </section>
+
+    <section class="links">
+      <h4>Blogs I Follow</h4>
+      <ul>
+        <li><a href="http://devlog.mahcuz.com/">Devlog</a></li>
+        <li><a href="http://www.eflorenzano.com/">Die in a Fire</a></li>
+        <li><a href="http://www.lostgarden.com">Lost Garden</a></li>
+        <li><a href="http://chargen.matasano.com">Matasano Chargen</a></li>
+        <li><a href="http://parsedcontent.blogspot.com">
+	    { Parsed Content }</a></li>
+        <li><a href="http://www.particlesinmotion.com">
+	    Particles in Motion</a></li>
+        <li><a href="http://www.schneier.com">Schneier on Security</a></li>
+        <li><a href="http://teddziuba.com/">Ted Dziuba</a></li>
+        <li><a href="http://rdist.root.org">root labs rdist</a></li>
+        <li><a href="http://www.veracode.com/blog">ZeroDay Labs</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h4>Web Comics</h4>
+      <ul>
+        <li><a href="http://www.eflorenzano.com/">Dresden Codak</a></li>
+        <li><a href="http://devlog.mahcuz.com/">XKCD</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <footer>
+    <p>motoma.io and all content therein is copyright of Christopher Gilbert 
+      — © 2012 All rights reserved.</p>
+  </footer>
+</body>
+</html>
