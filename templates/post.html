@@ -15,7 +15,8 @@
 <body>
   <header>
     <h1><a href="/">
-      <img src="static/motoma.io.32.inverted.eps.png" alt="motoma.io" text="motoma.io" />
+      <img src="static/motoma.io.32.inverted.eps.png" alt="motoma.io"
+	   text="motoma.io" />
     </h1></a>
   </header>
 
@@ -52,6 +53,15 @@
   
     <article>
       <h3><a href="/{{ post.url }}/">{{ post.title }}</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+        <time class="published" pubdate datetime="{{ post.date }}">
+          {{ post.date }}</time> by
+        <a href="https://plus.google.com/106366683920288141812?rel=author"
+           rel="author">{{ post.author }}</a>, tagged as
+          {% for tag in post.tags %}
+          <a href="/tags/{{ tag.replace(' ', '-') }}">{{ tag }}</a>
+          {% endfor %}
+      </p>
       {{ post.data|safe }}
     </article>
   </section>
