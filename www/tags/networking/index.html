@@ -49,31 +49,62 @@
 
     
     <article>
+      <h3><a href="/socks-wrapper-compatibility-improvements-and-pyloris-3-2/">SOCKS Wrapper, Compatibility Improvements, and PyLoris 3.2</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2010-09-23">
+	  2010-09-23</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/proxy">proxy</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/socks">socks</a>
+	
+	<a href="/tags/tunnel">tunnel</a>
+	
+	
+      </p>
+      
+<p>Almost a year and a half ago, I <a href=/home/pyloris-a-python-implementation-of-slowloris/>wrote a program called PyLoris</a>. Inspired by a proof of concept tool written by <a href=http://ha.ckers.org/>RSnake</a>, PyLoris demonstrated the efficacy of connection exhaustion as a vehicle for a denial of service attack. While the initial release of the tool was buggy and featureless, I began to imagine new ways to augment the attack, improving its ability to work unimpeded. SOCKS support was one of the improvements. By coupling PyLoris with SOCKS, the attack signature could become obfuscated, split across many different machines in geographically disparate locations, making mitigation a nightmare.</p>
+
+
+    </article>
+    
+    <article>
       <h3><a href="/pyloris/">PyLoris</a></h3>
       <p class="byline author vcard instapaper_ignore entry-unrelated">
 	<time class="published" pubdate datetime="2009-06-19">
 	  2009-06-19</time> by 
 	<a href="https://plus.google.com/106366683920288141812?rel=author"
-	   rel="author">Motoma</a>, tagged as 
-	  
-	  <a href="/tags/PyLoris">PyLoris</a>
-	  
-	  <a href="/tags/Python">Python</a>
-	  
-	  <a href="/tags/Hacking">Hacking</a>
-	  
-	  <a href="/tags/Denial-of-Service">Denial of Service</a>
-	  
-	  <a href="/tags/Linux">Linux</a>
-	  
-	  <a href="/tags/Mac-OS-X">Mac OS X</a>
-	  
-	  <a href="/tags/networking">networking</a>
-	  
-	  <a href="/tags/programming">programming</a>
-	  
-	  <a href="/tags/Windows">Windows</a>
-	  
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/PyLoris">PyLoris</a>
+	
+	<a href="/tags/Python">Python</a>
+	
+	<a href="/tags/Hacking">Hacking</a>
+	
+	<a href="/tags/Denial-of-Service">Denial of Service</a>
+	
+	<a href="/tags/Linux">Linux</a>
+	
+	<a href="/tags/Mac-OS-X">Mac OS X</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/Windows">Windows</a>
+	
+	
       </p>
       
 <p>PyLoris is a scriptable tool for testing a service's level of vulnerability to a particular class of Denial of Service (DoS) attack. Any service that places restrictions on the total number of simultaneous TCP connections has the potential for vulnerability to PyLoris. Additionally, services that handle connections in independent threads, services that poorly manage concurrent connections, and services that have high memory footprint per connection are prone to this form of vulnerability.</p>
@@ -81,7 +112,185 @@
 
     </article>
     
+    <article>
+      <h3><a href="/pyloris-a-python-implementation-of-slowloris/">PyLoris: A Python implementation of Slowloris</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2009-06-19">
+	  2009-06-19</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/denial-of-service">denial of service</a>
+	
+	<a href="/tags/dos">dos</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/linux">linux</a>
+	
+	<a href="/tags/mac-os-x">mac os x</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/windows">windows</a>
+	
+	
+      </p>
+      
+<p>I came across <a title="Slowloris HTTP denial of service" href="http://hackaday.com/2009/06/17/slowloris-http-denial-of-service/">a wonderful idea on Hack a Day</a> recently: a Denial of Service attack that overwhelms only the service under attack. After reading through <a title="ha.ckers.org" href="http://ha.ckers.org/">RSnake</a>'s <a title="Using Denial of Service for Hacking" href="http://ha.ckers.org/blog/20090504/using-denial-of-service-for-hacking/">two</a> <a title="Slowloris HTTP DoS" href="http://hackaday.com/2009/06/17/slowloris-http-denial-of-service/">writeups</a>, I decided to take a swing at the code. Thus <a title="PyLoris" href="https://sourceforge.net/projects/pyloris/">PyLoris</a> was born.</p>
 
+
+    </article>
+    
+    <article>
+      <h3><a href="/network-raid-storage-proof-of-concept/">Network RAID Storage: Proof of Concept</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-12-29">
+	  2007-12-29</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/connection">connection</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/linux">linux</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/online">online</a>
+	
+	<a href="/tags/raid">raid</a>
+	
+	<a href="/tags/storage">storage</a>
+	
+	
+      </p>
+      
+<p>I recently discovered <a title="Virtual RAID 5 Internet Storage" href="http://www.hackaday.com/2007/12/22/virtual-raid-5-internet-storage/">a post on Hack a Day</a> linking to <a title="virtual RAID 5 over internet" href="http://home.arcor.de/wonderer42/">a proof of concept how-to</a> on setting up a software RAID on FTP servers. While the guide is a simple approach to running a network based RAID 5 configuration, a number of tools the original developer used are less than optimal. First, the set up requires both Windows and Linux, meaning you will either need two physical machines, or a virtualized machine in your configuration. The second, and larger problem is that it is restricted to RAID 5 and FTP servers. This article is my attempt to alleviate both of these issues.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/security-perceived-risk-versus-potential-damage/">Security: Perceived Risk versus Potential Damage</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-10-19">
+	  2007-10-19</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/bad-software">bad software</a>
+	
+	<a href="/tags/damage">damage</a>
+	
+	<a href="/tags/database">database</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/potential">potential</a>
+	
+	<a href="/tags/risk">risk</a>
+	
+	<a href="/tags/security">security</a>
+	
+	<a href="/tags/wifi">wifi</a>
+	
+	<a href="/tags/wireless">wireless</a>
+	
+	
+      </p>
+      
+<p>All too often, while running the PHP forum on The Scripts, I see students working who are completely ignorant of the security concerns prevalent with the systems that they build. Worse, when alerted to the potential dangers associated with poor programming practices, these coders let loose a variety of excuses why their application doesn't need to implement a security policy. Ranging from "this is a low traffic/internal site" to "I'm doing this as a project for school, so security really isn't an issue." In my eyes all explanations are equally irrelevant. As leaders of the forums, my colleagues and I daily battle assertions about the validity of these concerns.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/eve/">Eve</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-05-24">
+	  2007-05-24</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/bad-software">bad software</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/microsoft">microsoft</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/rant">rant</a>
+	
+	<a href="/tags/windows">windows</a>
+	
+	
+      </p>
+      
+<p>While stomping around the <a href=http://cultdeadcow.com/cms/main.php3>cDc blog</a>, I came across the <a href=http://www.whitedust.net/eve/>Eve</a>. Eve is a network traffic analyzer which gifts its users with a 3D visual representation of the network traffic as it is happening. To be honest the moment I read this a little part of me screamed for joy. I rushed through the site and downloaded the <a href=http://www.whitedust.net/eve/download.php>trial version</a>.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/logmein-hamachi/">LogMeIn Hamachi</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-04-24">
+	  2007-04-24</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/rdp">rdp</a>
+	
+	<a href="/tags/remote">remote</a>
+	
+	<a href="/tags/tunnel">tunnel</a>
+	
+	<a href="/tags/vpn">vpn</a>
+	
+	<a href="/tags/wireless">wireless</a>
+	
+	
+      </p>
+      
+<p>Ever wanted to access files on your home computer from work? Wish you could host a online game with your buddies, but hate the hassle of dealing with routers and firewalls? Desire a little more security in your web-browsing?</p>
+
+<p><a href=http://www.logmeinhamachi.com/>LogMeIn Hamachi</a> is a robust tool for establishing VPNs on the go. It provides a simple interface for intermediate and advanced users to build fully encrypted VPNs across the Internet. Available in both free and professional versions, it is easy to use and it looks good too.</p>
+
+<p>The installation was a snap. After following the 5-minute walk through, I had a VPN up and running, allowing me to access my Windows File Sharing and RDP connections immediately.</p>
+
+    </article>
+    
+
+    <div class="page">
+      <div class="nav_older">
+        
+      </div>
+
+      <div class="nav_newer">
+        
+      </div>
+    </div>
   </section>
 
   <aside>

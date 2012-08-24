@@ -49,27 +49,130 @@
 
     
     <article>
+      <h3><a href="/using-python-to-be-the-man-in-the-middle/">Using Python to be the Man in the Middle</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2010-08-20">
+	  2010-08-20</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/mitm">mitm</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/sockets">sockets</a>
+	
+	
+      </p>
+      
+<p>I've started working on a private project which is on par with the type of programming I like to do. The basic premise is that the program acts as a man in the middle, routing traffic between client and server, occasionally altering or injecting data into the stream each way.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/pyloris/">PyLoris</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2009-06-19">
+	  2009-06-19</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/PyLoris">PyLoris</a>
+	
+	<a href="/tags/Python">Python</a>
+	
+	<a href="/tags/Hacking">Hacking</a>
+	
+	<a href="/tags/Denial-of-Service">Denial of Service</a>
+	
+	<a href="/tags/Linux">Linux</a>
+	
+	<a href="/tags/Mac-OS-X">Mac OS X</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/Windows">Windows</a>
+	
+	
+      </p>
+      
+<p>PyLoris is a scriptable tool for testing a service's level of vulnerability to a particular class of Denial of Service (DoS) attack. Any service that places restrictions on the total number of simultaneous TCP connections has the potential for vulnerability to PyLoris. Additionally, services that handle connections in independent threads, services that poorly manage concurrent connections, and services that have high memory footprint per connection are prone to this form of vulnerability.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/pyloris-a-python-implementation-of-slowloris/">PyLoris: A Python implementation of Slowloris</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2009-06-19">
+	  2009-06-19</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/denial-of-service">denial of service</a>
+	
+	<a href="/tags/dos">dos</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/linux">linux</a>
+	
+	<a href="/tags/mac-os-x">mac os x</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/windows">windows</a>
+	
+	
+      </p>
+      
+<p>I came across <a title="Slowloris HTTP denial of service" href="http://hackaday.com/2009/06/17/slowloris-http-denial-of-service/">a wonderful idea on Hack a Day</a> recently: a Denial of Service attack that overwhelms only the service under attack. After reading through <a title="ha.ckers.org" href="http://ha.ckers.org/">RSnake</a>'s <a title="Using Denial of Service for Hacking" href="http://ha.ckers.org/blog/20090504/using-denial-of-service-for-hacking/">two</a> <a title="Slowloris HTTP DoS" href="http://hackaday.com/2009/06/17/slowloris-http-denial-of-service/">writeups</a>, I decided to take a swing at the code. Thus <a title="PyLoris" href="https://sourceforge.net/projects/pyloris/">PyLoris</a> was born.</p>
+
+
+    </article>
+    
+    <article>
       <h3><a href="/matasano-port-forwarding-interceptor/">Matasano Port Forwarding Interceptor</a></h3>
       <p class="byline author vcard instapaper_ignore entry-unrelated">
 	<time class="published" pubdate datetime="2009-05-26">
 	  2009-05-26</time> by 
 	<a href="https://plus.google.com/106366683920288141812?rel=author"
-	   rel="author">Motoma</a>, tagged as 
-	  
-	  <a href="/tags/hacking">hacking</a>
-	  
-	  <a href="/tags/matasano">matasano</a>
-	  
-	  <a href="/tags/pfi">pfi</a>
-	  
-	  <a href="/tags/port-forwarding">port forwarding</a>
-	  
-	  <a href="/tags/proxy">proxy</a>
-	  
-	  <a href="/tags/python">python</a>
-	  
-	  <a href="/tags/tool">tool</a>
-	  
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/matasano">matasano</a>
+	
+	<a href="/tags/pfi">pfi</a>
+	
+	<a href="/tags/port-forwarding">port forwarding</a>
+	
+	<a href="/tags/proxy">proxy</a>
+	
+	<a href="/tags/python">python</a>
+	
+	<a href="/tags/tool">tool</a>
+	
+	
       </p>
       
 <p>Do you ever find yourself in a protocol sniffing situation where you wish you had the ability to sneak a peak at a TCP stream as it happens? Do you find Wireshark--while certainly a powerful and robust tool--too clunky for quick protocol analysis? Do you have a need to intercept, pause, modify, and resend TCP streams? If so, the folks from Matasano have released the perfect tool for you!</p>
@@ -80,7 +183,162 @@
 
     </article>
     
+    <article>
+      <h3><a href="/network-raid-storage-proof-of-concept/">Network RAID Storage: Proof of Concept</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-12-29">
+	  2007-12-29</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/connection">connection</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/linux">linux</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/online">online</a>
+	
+	<a href="/tags/raid">raid</a>
+	
+	<a href="/tags/storage">storage</a>
+	
+	
+      </p>
+      
+<p>I recently discovered <a title="Virtual RAID 5 Internet Storage" href="http://www.hackaday.com/2007/12/22/virtual-raid-5-internet-storage/">a post on Hack a Day</a> linking to <a title="virtual RAID 5 over internet" href="http://home.arcor.de/wonderer42/">a proof of concept how-to</a> on setting up a software RAID on FTP servers. While the guide is a simple approach to running a network based RAID 5 configuration, a number of tools the original developer used are less than optimal. First, the set up requires both Windows and Linux, meaning you will either need two physical machines, or a virtualized machine in your configuration. The second, and larger problem is that it is restricted to RAID 5 and FTP servers. This article is my attempt to alleviate both of these issues.</p>
 
+
+    </article>
+    
+    <article>
+      <h3><a href="/security-perceived-risk-versus-potential-damage/">Security: Perceived Risk versus Potential Damage</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-10-19">
+	  2007-10-19</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/bad-software">bad software</a>
+	
+	<a href="/tags/damage">damage</a>
+	
+	<a href="/tags/database">database</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/networking">networking</a>
+	
+	<a href="/tags/potential">potential</a>
+	
+	<a href="/tags/risk">risk</a>
+	
+	<a href="/tags/security">security</a>
+	
+	<a href="/tags/wifi">wifi</a>
+	
+	<a href="/tags/wireless">wireless</a>
+	
+	
+      </p>
+      
+<p>All too often, while running the PHP forum on The Scripts, I see students working who are completely ignorant of the security concerns prevalent with the systems that they build. Worse, when alerted to the potential dangers associated with poor programming practices, these coders let loose a variety of excuses why their application doesn't need to implement a security policy. Ranging from "this is a low traffic/internal site" to "I'm doing this as a project for school, so security really isn't an issue." In my eyes all explanations are equally irrelevant. As leaders of the forums, my colleagues and I daily battle assertions about the validity of these concerns.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/daemonizing-a-python-script/">Daemonizing a Python Script</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-08-10">
+	  2007-08-10</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/daemon">daemon</a>
+	
+	<a href="/tags/daemonize">daemonize</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/python">python</a>
+	
+	
+      </p>
+      
+<p>As my knowledge of <a href="http://python.org/">Python</a> continues to grow, I find myself using it more in my own systems. This is one of my more useful snippets of code; it allows a Python script to continue running as a daemon even if you log out or your session gets disconnected. A nice side effect of this is that the process is immediately run in the background, returning the user to a command prompt instantly.</p><p>I originally picked up the code to run a Python script as a daemon from the <a href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/66012">Python Cookbook</a> on the <a href="http://aspn.activestate.com/">ActiveState Programmer Network</a>.</p>
+
+
+    </article>
+    
+    <article>
+      <h3><a href="/gumstix-u-boot-1/">Gumstix u-boot 1.2</a></h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+	<time class="published" pubdate datetime="2007-07-26">
+	  2007-07-26</time> by 
+	<a href="https://plus.google.com/106366683920288141812?rel=author"
+	   rel="author">Motoma</a>
+	
+	, tagged as 
+	
+	<a href="/tags/gumstix">gumstix</a>
+	
+	<a href="/tags/hacking">hacking</a>
+	
+	<a href="/tags/hyperterminal">hyperterminal</a>
+	
+	<a href="/tags/kermit">kermit</a>
+	
+	<a href="/tags/kernel">kernel</a>
+	
+	<a href="/tags/linux">linux</a>
+	
+	<a href="/tags/programming">programming</a>
+	
+	<a href="/tags/serial">serial</a>
+	
+	<a href="/tags/u-boot">u-boot</a>
+	
+	<a href="/tags/update">update</a>
+	
+	<a href="/tags/upgrade">upgrade</a>
+	
+	<a href="/tags/usb">usb</a>
+	
+	<a href="/tags/verdex">verdex</a>
+	
+	<a href="/tags/ymodem">ymodem</a>
+	
+	
+      </p>
+      
+<p>I took the plunge and, at the <span class=em>risk of bricking my Verdex</span>, updated u-boot. I can only begin to describe the improvements! The process was not nearly as perilous as I anticipated (though I did hold my breath when I rebooted the first time). Noteworthy improvements are the ability to load the kernel directly into the U-Boot environment, and the inclusion of ymodem file transfers over the serial line. The former reduces my boot time to a breathtaking 23 seconds, while the latter reduces rootfs flash time via serial connection by more than half!</p>
+
+
+    </article>
+    
+
+    <div class="page">
+      <div class="nav_older">
+        
+        <a href="1/">Older &laquo;</a>
+        
+      </div>
+
+      <div class="nav_newer">
+        
+      </div>
+    </div>
   </section>
 
   <aside>

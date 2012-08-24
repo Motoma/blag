@@ -34,7 +34,8 @@ for module in modules:
         if hasattr(post, 'tags'):
             post.tags = [tag.strip() for tag in post.tags.split(',')]
             for tag in post.tags:
-                if not tags.has_key(module):
+                tag = tag.lower()
+                if not tags.has_key(tag):
                     tags[tag] = []
                 tags[tag].insert(0, module)
                     
@@ -75,7 +76,9 @@ for i in range(last_index + 1):
     
     fhandle = open('%s/%i/index.html' % (WWW_DIR, i), 'wb')
     fhandle.write(t_index.render(posts=index_posts,
-                                 projects=projects[:3]).encode('utf-8'))
+                                 projects=projects[:3],
+                                 current_page=i,
+                                 last_page=last_index).encode('utf-8'))
     fhandle.close()
 
 cp('%s/0/index.html' % (WWW_DIR), '%s/index.html' % (WWW_DIR))
@@ -86,6 +89,8 @@ mkdirp('%s/tags' % (WWW_DIR))
 for tag, items in tags.items():
     tag = tag.replace(' ', '-')
     mkdirp('%s/tags/%s' % (WWW_DIR, tag))
+
+    print tag, len(items)
 
     tag_posts = {}
     for item in items:
@@ -105,7 +110,9 @@ for tag, items in tags.items():
         
         fhandle = open('%s/tags/%s/%i/index.html' % (WWW_DIR, tag, i), 'wb')
         fhandle.write(t_index.render(posts=index_posts,
-                                     projects=projects[:3]).encode('utf-8'))
+                                     projects=projects[:3],
+                                     current_page=i,
+                                     last_page=last_index).encode('utf-8'))
         fhandle.close()
     cp('%s/tags/%s/0/index.html' % (WWW_DIR, tag),
        '%s/tags/%s/index.html' % (WWW_DIR, tag))
