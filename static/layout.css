@@ -115,6 +115,7 @@ section.content
     padding: 20px;
     float: left;
     min-width: 350px;
+    max-width: 95%;
 }
 
 aside

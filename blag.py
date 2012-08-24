@@ -14,7 +14,6 @@ t_post = env.get_template('post.html')
 
 about = None
 posts = {}
-quips = {}
 projects = []
 tags = {}
 
@@ -40,9 +39,6 @@ for module in modules:
                 tags[tag].insert(0, module)
                     
         posts[module] = post
-
-    elif module[:4] == 'quip':
-        quips[module] = __import__(module)
 
     elif module[:7] == 'project':
         projects.insert(0, __import__(module))
