@@ -90,8 +90,6 @@ for tag, items in tags.items():
     tag = tag.replace(' ', '-')
     mkdirp('%s/tags/%s' % (WWW_DIR, tag))
 
-    print tag, len(items)
-
     tag_posts = {}
     for item in items:
         tag_posts[item] = posts[item]
