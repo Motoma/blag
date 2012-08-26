@@ -11,5 +11,5 @@ deploy:
 	sh deploy.sh
 
 commit:
-	git add www
+	git add .
 	git commit -a -m "$(DATE) - Automatic commit from build" 
