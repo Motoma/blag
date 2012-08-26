@@ -6,6 +6,11 @@
 
   <meta name="generator" content="Blagmaster" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="google-site-verification"
+	content="fpiMFEd5SHR15hcV7NKYxnCoqx3zGOOC-iqaJdArezw" />
+  <meta description="A topical web log about computers, programming, and life
+                     in the digital age." />
+  <meta keywords="programming, hacking, python, linux, pyloris, socksipy" />
 
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="/static/layout.css" />
@@ -57,7 +62,7 @@
 	{% if post.tags %}
 	, tagged as 
 	{% for tag in post.tags %}
-	<a href="/tags/{{ tag.replace(' ', '-') }}">{{ tag }}</a>
+	<a href="/tags/{{ tag.replace(' ', '-').lower() }}">{{ tag }}</a>
 	{% endfor %}
 	{% endif %}
       </p>
@@ -65,19 +70,31 @@
     </article>
     {% endfor %}
 
+    {% if tag_page and current_page == 0 %}
     <div class="page">
       <div class="nav_older">
         {% if current_page < last_page %}
         <a href="{{ current_page + 1 }}/">Older &laquo;</a>
         {% endif %}
       </div>
+    </div>
+    {% else %}
+    <div class="page">
+      <div class="nav_older">
+        {% if current_page < last_page %}
+        <a href="../{{ current_page + 1 }}/">Older &laquo;</a>
+        {% endif %}
+      </div>
 
       <div class="nav_newer">
-        {% if current_page > 0 %}
-        <a href="{{ current_page - 1 }}/">Newer &raquo;</a>
+        {% if current_page > 1 %}
+        <a href="../{{ current_page - 1 }}/">Newer &raquo;</a>
+        {% elif current_page == 1 %}
+        <a href="../">Newer &raquo;</a>
         {% endif %}
       </div>
     </div>
+    {% endif %}
   </section>
 
   <aside>

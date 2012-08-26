@@ -21,6 +21,11 @@ def rmrf(path): os.system('rm -rf %s' % path)
 def mkdirp(path): os.system('mkdir -p %s' % path)
 def cp(src, dest): os.system('cp %s %s' % (src, dest))
 
+# round up division: 1/2=1 2/2=1 3/2=2
+def cdiv(num, denom):
+    if num % denom == 0: return num / denom
+    else: return num / denom + 1
+
 # Iterate over Python moduels in data directory and load them
 sys.path.append('./%s' % (DATA_DIR))
 modules = [mod[:-3] for mod in os.listdir(DATA_DIR) if mod[-3:] == '.py']
@@ -66,8 +71,8 @@ for post in posts.values():
 # Render index pages
 rmrf('%s/index.html' % (WWW_DIR))
 sorted_keys = sorted(posts, key=lambda x: posts[x].date, reverse=True)
-last_index = len(posts) / ITEMS_PER_PAGE
-for i in range(last_index + 1):
+last_index = cdiv(len(posts), ITEMS_PER_PAGE)
+for i in range(last_index):
     rmrf('%s/%i' % (WWW_DIR, i))
     mkdirp('%s/%i' % (WWW_DIR, i))
     first = i * ITEMS_PER_PAGE
@@ -78,10 +83,10 @@ for i in range(last_index + 1):
     fhandle.write(t_index.render(posts=index_posts,
                                  projects=projects[:3],
                                  current_page=i,
-                                 last_page=last_index).encode('utf-8'))
+                                 last_page=last_index - 1).encode('utf-8'))
     fhandle.close()
-
 cp('%s/0/index.html' % (WWW_DIR), '%s/index.html' % (WWW_DIR))
+rmrf('%s/0/index.html' % (WWW_DIR))
 
 # Render tag pages
 rmrf('%s/tags' % (WWW_DIR))
@@ -97,8 +102,8 @@ for tag, items in tags.items():
     sorted_keys = sorted(tag_posts, key=lambda x: tag_posts[x].date,
                          reverse=True)
 
-    last_index = len(sorted_keys) / ITEMS_PER_PAGE
-    for i in range(last_index + 1):
+    last_index = cdiv(len(sorted_keys), ITEMS_PER_PAGE)
+    for i in range(last_index):
         rmrf('%s/tags/%s/%i' % (WWW_DIR, tag, i))
         mkdirp('%s/tags/%s/%i' % (WWW_DIR, tag, i))
         
@@ -110,7 +115,9 @@ for tag, items in tags.items():
         fhandle.write(t_index.render(posts=index_posts,
                                      projects=projects[:3],
                                      current_page=i,
-                                     last_page=last_index).encode('utf-8'))
+                                     last_page=last_index - 1,
+                                     tag_page=True).encode('utf-8'))
         fhandle.close()
     cp('%s/tags/%s/0/index.html' % (WWW_DIR, tag),
        '%s/tags/%s/index.html' % (WWW_DIR, tag))
+    rmrf('%s/tags/%s/0/' % (WWW_DIR, tag))

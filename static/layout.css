@@ -48,16 +48,18 @@ div.page
     margin: 2em;
 }
 
-div.older
+div.nav_older
 {
     display: inline;
     float: left;
+    width: 20%;
 }
 
 div.nav_newer
 {
     display: inline;
     float: right;
+    width: 20%;
 }
 
 nav
