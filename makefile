@@ -1,4 +1,4 @@
-DATE=`date -Iminures`
+DATE=`date -Iminutes`
 
 all: build deploy commit
 
