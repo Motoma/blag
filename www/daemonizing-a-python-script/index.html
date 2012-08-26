@@ -2,7 +2,7 @@
 <html>
 
 <head lang="en">
-  <title>Motoma.io &raquo; Daemonizing a Python Script</title>
+  <title>Daemonizing a Python Script</title>
 
   <meta name="generator" content="Blagmaster" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -50,24 +50,27 @@
 
   <section class="content">
   
-    <article>
-      <h3><a href="/daemonizing-a-python-script/">Daemonizing a Python Script</a></h3>
+    <article class="hentry">
+      <h3>
+	<a href="/daemonizing-a-python-script/" class="entry-title">Daemonizing a Python Script</a>
+      </h3>
       <p class="byline author vcard instapaper_ignore entry-unrelated">
-        <time class="published" pubdate datetime="2007-08-10">
+        <time class="published updated" pubdate datetime="2007-08-10">
           2007-08-10</time> by
         <a href="https://plus.google.com/106366683920288141812?rel=author"
-           rel="author">Motoma</a>, tagged as
-          
-          <a href="/tags/<built-in method lower of str object at 0xffe03400>">daemon</a>
-          
-          <a href="/tags/<built-in method lower of str object at 0xffe0c638>">daemonize</a>
-          
-          <a href="/tags/<built-in method lower of str object at 0xffe03040>">hacking</a>
-          
-          <a href="/tags/<built-in method lower of str object at 0xffe0c7c8>">programming</a>
-          
-          <a href="/tags/<built-in method lower of str object at 0xffe03160>">python</a>
-          
+           rel="author" class="fn" lang="en">Motoma</a>, tagged as
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe03bc0>">daemon</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe0d5e8>">daemonize</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe03640>">hacking</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe0d778>">programming</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe037e0>">python</a>
+        
+        
       </p>
       
 <p>As my knowledge of <a href="http://python.org/">Python</a> continues to grow, I find myself using it more in my own systems. This is one of my more useful snippets of code; it allows a Python script to continue running as a daemon even if you log out or your session gets disconnected. A nice side effect of this is that the process is immediately run in the background, returning the user to a command prompt instantly.</p><p>I originally picked up the code to run a Python script as a daemon from the <a href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/66012">Python Cookbook</a> on the <a href="http://aspn.activestate.com/">ActiveState Programmer Network</a>.</p>

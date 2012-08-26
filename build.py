@@ -116,7 +116,7 @@ for tag, items in tags.items():
                                      projects=projects[:3],
                                      current_page=i,
                                      last_page=last_index - 1,
-                                     tag_page=True).encode('utf-8'))
+                                     tag_page=tag).encode('utf-8'))
         fhandle.close()
     cp('%s/tags/%s/0/index.html' % (WWW_DIR, tag),
        '%s/tags/%s/index.html' % (WWW_DIR, tag))
