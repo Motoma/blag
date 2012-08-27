@@ -40,10 +40,11 @@ header h1 img
     top: 2px;
     left: 1.6em;
     z-index: 1;
+}
 
 pre
 {
-    border: 1px #EEE solid;
+    border: 1px #DDD solid;
     background-color: #E5E5E5;
     overflow-x: auto;
     padding: 0.7em;
