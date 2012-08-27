@@ -1,5 +1,5 @@
 author = "Motoma"
-date   = "2012-08-29"
+date   = "2012-08-27"
 tags   = "python, programming, pluign, architecture"
 title  = "Dynamically Loading and Unloading Python Modules"
 url    = "dynamically-loading-and-unloading-python-modules"

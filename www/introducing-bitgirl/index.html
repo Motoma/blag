@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <title>Introducing: BitGirl</title>
+
+  <meta name="generator" content="Blagmaster" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="google-site-verification"
+	content="fpiMFEd5SHR15hcV7NKYxnCoqx3zGOOC-iqaJdArezw" />
+  <meta description="BitGirl is a fully pluggable IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly, without rebooting. This allows for highly dynamic behavior with seamless updates, granting the plugin developer an extremely high turn around rate for the code-compile-test cycle. BitGirl was written as an entry to the Dream.In.Code IRC Competition (http://www.dreamincode.net/forums/topic/238097-irc-competition/)." />
+  <meta keywords="programming, hacking, python, linux, pyloris, socksipy" />
+
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/static/layout.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="/">
+      <img src="/static/motoma.io.32.inverted.eps.png" alt="Motoma.io"
+	   text="Motoma.io" />
+    </h1></a>
+  </header>
+
+  <nav>
+    <ul>
+      <li class="link">
+        <a href="/about/" title="Learn more about me" class="link">About</a>
+      </li>
+        
+      <li class="current">
+        <a href="/" title="Goto the blog" class="current">Blog</a>
+      </li>
+    </ul>
+
+    <section>
+      <a href="http://www.linkedin.com/in/motoma">
+	<img src="/static/linkedin.png" /></a>
+      <a href="http://www.facebook.com/motoma">
+	<img src="/static/facebook.png" /></a>
+      <a href="http://www.twitter.com/motoma">
+	<img src="/static/twitter.png" /></a>
+      <a href="http://gplus.to/motoma">
+	<img src="/static/gplus.png" /></a>
+      <a href="http://www.github.com/motoma">
+	<img src="/static/github.png" /></a>
+    </section>
+  </nav>
+
+  <section class="content">
+  
+    <article class="hentry">
+      <h3>
+	<a href="/introducing-bitgirl/" class="entry-title">Introducing: BitGirl</a>
+      </h3>
+      <p class="byline author vcard instapaper_ignore entry-unrelated">
+        <time class="published updated" pubdate datetime="2012-08-27">
+          2012-08-27</time> by
+        <a href="https://plus.google.com/106366683920288141812?rel=author"
+           rel="author" class="fn" lang="en">Motoma</a>, tagged as
+        
+        <a href="/tags/<built-in method lower of str object at 0xffd8b8e0>">python</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe0f9a8>">programming</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffd8b960>">pluign</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffe0f9d0>">architecture</a>
+        
+        <a href="/tags/<built-in method lower of str object at 0xffd8b980>">IRC</a>
+        
+        
+      </p>
+      
+<p>BitGirl is a fully pluggable IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly, without rebooting. This allows for highly dynamic behavior with seamless updates, granting the plugin developer an extremely high turn around rate for the code-compile-test cycle.</p>
+
+<p>BitGirl was written as an entry to the Dream.In.Code IRC Competition (<a href="http://www.dreamincode.net/forums/topic/238097-irc-competition/">http://www.dreamincode.net/forums/topic/238097-irc-competition/</a>).</p>
+
+<!-- break -->
+
+<p>When started, she connects to irc.efnet.org and joins #MotomaBot. She then waits for commands to be sent to her via direct message.</p>
+
+<p>The commands she allows by default are:</p>
+
+<pre><code>load &lt;script&gt;: loads a script from the plugin directory. (ex. /msg BitGirl load bucket)
+unload &lt;script&gt;: unloads a script and clears any saved state from memory (ex. /msg BitGirl unload bucket)
+reload &lt;script&gt;: reloads a script and clears any saved state from memory (ex. /msg BitGirl reload bucket)
+list: lists loaded and available scripts (ex. /msg BitGirl list)
+join &lt;channel&gt;: causes BitGirl to join a channel (ex. /msg BitGirl join #DreamInCode)
+leave &lt;channel&gt;: causes BitGirl to leave a channel (ex. /msg BitGirl leave#DreamInCode)
+</code></pre>
+
+<p>Everything else about BitGirl is modular, and controlled through various included plugins.</p>
+
+<pre><code>bucket: Emulates some of #XKCD's Bucket's behavior.
+cakefart: You may have seen this one in the chat...
+logger: logs all activity to the command line.
+thegame: Awards players XP based on behavior in the chat. Scores are stored in the data directory.
+trivia: Abruptly subverts people trying to play SuperCore's bot's trivia (which never was completed, btw).
+</code></pre>
+
+<h4>Bucket</h4>
+
+<p>bucket is a program in and of itself. Essentially, it falls into two parts: personality, fact memory, and responsiveness.</p>
+
+<p>Personality and responsiveness are hard coded. BitGirl will go out of her way to cheer up people and harass bots. Additionally, she responds directly to emotes that involve her.</p>
+
+<p>Fact memory on the other hand is much more in-depth. bucket allows BitGirl to learn and forget pieces of information about topics. These are entirely controlled by users in the channels she is in, and are stored between reboots and rejoins in an SQLite database (in the data directory). When BitGirl hears something she knows about, there is a chance that she will respond with a factoid.</p>
+
+<p>You can teach BitGirl a fact by using the [] to highlight a keyword. For instance:</p>
+
+<pre><code>&lt;Motoma&gt; BitGirl: [Java] is the reason I have [nightmare]s.
+...
+&lt;Dogstoppe&gt; I had this mad nightmare last night.
+&lt;BitGirl&gt; Java is the reason I have nightmares.
+</code></pre>
+
+<p>You can have multiple factoids per word, and multiple words per factoid.</p>
+
+<p>Additionally, BitGirl can substitute words:</p>
+
+<pre><code>&lt;Motoma&gt; BitGirl: &lt;verbing&gt; punching
+&lt;Motoma&gt; BitGirl: &lt;nouns&gt; trees
+&lt;Motoma&gt; BitGirl: [I love] $verbing $nouns.
+...
+&lt;Dogstoppe&gt; I love DreamInCode.
+&lt;BitGirl&gt; I love punching trees.
+</code></pre>
+
+<p>There is a significant number of factoids stored in data/bucket.pk. </p>
+
+<h4>The Way Bot Programming Should Be</h4>
+
+<p>The pluggable architecture allows even the python novice to begin developing a bot in my framework. You may simply create a script in the scripts folder, and in it, inherit from template.IRCScript. From there, you build callbacks for each of the IRC events. For instance, the logger script, in its entirety:</p>
+
+<script src="https://gist.github.com/3490392.js?file=logger.py"></script>
+
+<p>The list of inherited and overridable supported callbacks are:</p>
+
+<pre><code>privmsg: Called any time the bot receives a private message
+joined: Called any time the bot joins a channel.
+left: Called any time the bot leaves a channel.
+signedOn: Called any time the bot connects to a server.
+action: Called any time the someone performs an emote in a channel the bot is in (/me dances wildly)
+userJoined: Called when a user joins a channel the bot is in.
+userLeft: Called when a user leaves a channel the bot is in.
+userQuit: Called when a user quits from a channel the bot is in.
+userKicked: Called when a user is kicked from a channel the bot is in.
+msg: Called whenever a user talks in a channel the bot is in.
+describe: Called whenever the bot performs an emote.
+</code></pre>
+
+<p>Additionally, any child for the IRCScript can use the send_msg and send_describe to talk and emote in a channel.</p>
+
+
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+	var disqus_shortname = 'motomastyle';
+	var disqus_identifier = '/introducing-bitgirl';
+	var disqus_url = 'http://motoma.io//introducing-bitgirl';
+	
+	(function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+      </script>
+      <noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+      </noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+    </article>
+  </section>
+
+  <aside>
+    <section class="projects">
+      <ul>
+	
+	<li class="odd">
+	  <a href="https://www.github.com/Motoma/bitgirl">BitGirl</a>
+	  <p>BitGirl is a fully pluggable Python-based IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly.</p>
+	</li>
+	
+	<li class="even">
+	  <a href="https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
+	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
+	</li>
+	
+	<li class="odd">
+	  <a href="http://sourceforge.net/projects/pyloris/">PyLoris</a>
+	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
+	</li>
+	
+      </ul>
+    </section>
+
+    <section class="random">
+      <h4>/dev/urandom</h4>
+      <p>"There is no greater importance in all the world like knowing you are
+	right and that the wave of the world is wrong, yet the wave crashes 
+	upon you."</p>
+    </section>
+
+    <section class="links">
+      <h4>Blogs I Follow</h4>
+      <ul>
+        <li><a href="http://www.eflorenzano.com/">Die in a Fire</a></li>
+        <li><a href="http://www.lostgarden.com">Lost Garden</a></li>
+        <li><a href="http://chargen.matasano.com">Matasano Chargen</a></li>
+        <li><a href="http://parsedcontent.blogspot.com">
+	    { Parsed Content }</a></li>
+        <li><a href="http://www.particlesinmotion.com">
+	    Particles in Motion</a></li>
+        <li><a href="http://www.schneier.com">Schneier on Security</a></li>
+        <li><a href="http://teddziuba.com/">Ted Dziuba</a></li>
+        <li><a href="http://rdist.root.org">root labs rdist</a></li>
+        <li><a href="http://www.veracode.com/blog">ZeroDay Labs</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h4>Web Comics</h4>
+      <ul>
+        <li><a href="http://www.dresdencodak.com/">Dresden Codak</a></li>
+        <li><a href="http://www.xkcd.com/">XKCD</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <footer>
+    <p>motoma.io and all content therein is copyright of Christopher Gilbert 
+      — © 2012 All rights reserved.</p>
+  </footer>
+
+  <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-1667338-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  </script>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.completelyreliable.com/" : "http://stats.completelyreliable.com/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 4);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script><noscript><p><img src="http://stats.completelyreliable.com/piwik.php?idsite=4" style="border:0" alt="" /></p></noscript>
+  <!-- End Piwik Tracking Code -->
+</body>
+</html>

@@ -57,7 +57,8 @@ mkdirp(WWW_DIR)
 mkdirp('%s/about' % (WWW_DIR))
 fhandle = open('%s/about/index.html' % (WWW_DIR), 'wb')
 fhandle.write(t_about.render(about=about,
-                             projects=projects[:3]).encode('utf-8'))
+                             projects=projects[:PROJECTS_ON_PAGE]
+                             ).encode('utf-8'))
 fhandle.close()
 
 # Render individual posts
@@ -65,7 +66,8 @@ for post in posts.values():
     mkdirp('%s/%s' % (WWW_DIR, post.url))
     fhandle = open('%s/%s/index.html' % (WWW_DIR, post.url), 'wb')
     fhandle.write(t_post.render(post=post,
-                                projects=projects[:3]).encode('utf-8'))
+                                projects=projects[:PROJECTS_ON_PAGE]
+                                ).encode('utf-8'))
     fhandle.close()
 
 # Render index pages
@@ -81,7 +83,7 @@ for i in range(last_index):
     
     fhandle = open('%s/%i/index.html' % (WWW_DIR, i), 'wb')
     fhandle.write(t_index.render(posts=index_posts,
-                                 projects=projects[:3],
+                                 projects=projects[:PROJECTS_ON_PAGE],
                                  current_page=i,
                                  last_page=last_index - 1).encode('utf-8'))
     fhandle.close()
@@ -113,7 +115,7 @@ for tag, items in tags.items():
         
         fhandle = open('%s/tags/%s/%i/index.html' % (WWW_DIR, tag, i), 'wb')
         fhandle.write(t_index.render(posts=index_posts,
-                                     projects=projects[:3],
+                                     projects=projects[:PROJECTS_ON_PAGE],
                                      current_page=i,
                                      last_page=last_index - 1,
                                      tag_page=tag).encode('utf-8'))
