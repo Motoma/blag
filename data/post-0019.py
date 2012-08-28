@@ -4,7 +4,7 @@ tags          = "networking, proxy, python, socks, tunnel"
 title         = "SOCKS Wrapper, Compatibility Improvements, and PyLoris 3.2"
 url           = "socks-wrapper-compatibility-improvements-and-pyloris-3-2"
 data          = """
-<p>Almost a year and a half ago, I <a href=/home/pyloris-a-python-implementation-of-slowloris/>wrote a program called PyLoris</a>. Inspired by a proof of concept tool written by <a href=http://ha.ckers.org/>RSnake</a>, PyLoris demonstrated the efficacy of connection exhaustion as a vehicle for a denial of service attack. While the initial release of the tool was buggy and featureless, I began to imagine new ways to augment the attack, improving its ability to work unimpeded. SOCKS support was one of the improvements. By coupling PyLoris with SOCKS, the attack signature could become obfuscated, split across many different machines in geographically disparate locations, making mitigation a nightmare.</p>
+<p>Almost a year and a half ago, I <a href=/pyloris-a-python-implementation-of-slowloris/>wrote a program called PyLoris</a>. Inspired by a proof of concept tool written by <a href=http://ha.ckers.org/>RSnake</a>, PyLoris demonstrated the efficacy of connection exhaustion as a vehicle for a denial of service attack. While the initial release of the tool was buggy and featureless, I began to imagine new ways to augment the attack, improving its ability to work unimpeded. SOCKS support was one of the improvements. By coupling PyLoris with SOCKS, the attack signature could become obfuscated, split across many different machines in geographically disparate locations, making mitigation a nightmare.</p>
 
 <!-- break -->
 
