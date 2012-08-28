@@ -4,12 +4,15 @@
 <head lang="en">
   <title>{{ post.title }}</title>
 
-  <meta name="generator" content="Blagmaster" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Blagmaster" />
+  <meta name="title" content="{{ post.title }}" />
+  <meta name="keywords"
+	content="Motoma{% for tag in post.tags %}, {{ tag }}{% endfor %}" />
+  <meta name="description"
+	content="{{ post.data.split('<!-- break -->')[0]|striptags }}" />
   <meta name="google-site-verification"
 	content="fpiMFEd5SHR15hcV7NKYxnCoqx3zGOOC-iqaJdArezw" />
-  <meta description="{{ post.data.split('<!-- break -->')[0]|striptags }}" />
-  <meta keywords="programming, hacking, python, linux, pyloris, socksipy" />
 
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="/static/layout.css" />
