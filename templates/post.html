@@ -15,8 +15,8 @@
       <p class="byline author vcard instapaper_ignore entry-unrelated">
         <time class="published updated" datetime="{{ post.date }}">
           {{ post.date }}</time> by
-        <a href="https://plus.google.com/106366683920288141812?rel=author"
-           rel="author" class="fn" lang="en">{{ post.author }}</a>
+        <a href="http://motoma.io/about/" rel="author" class="fn" lang="en">
+	  {{ post.author }}</a>
         {%- if post.tags %}, tagged as
         {% for tag in post.tags %}
         <a href="/tags/{{ tag.replace(' ', '-').lower() }}">{{ tag }}</a>
