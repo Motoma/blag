@@ -19,7 +19,8 @@
 	   lang="en">{{ post.author }}</a>
         {%- if post.tags %}, tagged as
         {% for tag in post.tags %}
-        <a href="/tags/{{ tag.replace(' ', '-').lower() }}">{{ tag }}</a>
+        <a href="/tags/{{ tag.replace(' ', '-').lower() }}" rel="tag">
+	  {{ tag }}</a>
         {% endfor %}
         {% endif %}
       </p>
