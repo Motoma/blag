@@ -1,4 +1,5 @@
 DATE=`date -Iminutes`
+MSG="$(DATE) - Automatic commit from build"
 
 all: build deploy commit
 
@@ -12,4 +13,5 @@ deploy:
 
 commit:
 	git add .
-	git commit -a -m "$(DATE) - Automatic commit from build" 
+	git commit -a -m "$(MSG)"
+

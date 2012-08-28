@@ -2,21 +2,21 @@
 <html>
 
 <head lang="en">
-  
+  {% block head %}
   <title>Motoma.io &raquo;
-     posts tagged as video
-    
+    {% if tag_page %} posts tagged as {{ tag_page }}
+    {% else %} Blog{% endif %}
   </title>
 
   <meta name="title" content="Motoma.io &raquo;
-     posts tagged as video
-    " />
+    {% if tag_page %} posts tagged as {{ tag_page }}
+    {% else %} Blog{% endif %}" />
   <meta name="keywords"
         content="Motoma, programming, hacking, python, linux" />
   <meta name="description"
         content="A topical web log about computers, programming, and life in
 		 the digital age." />
-
+  {% endblock %}
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Blagmaster" />
   <meta name="google-site-verification"
@@ -63,66 +63,19 @@
   </nav>
 
   <section class="content">
-    
-
-    <article class="hentry">
-      <h3>
-        <a href="/converting-videos-for-the-ipod-video/" class="entry-title">Converting Videos for the iPod Video</a>
-      </h3>
-      <p class="byline author vcard instapaper_ignore entry-unrelated">
-        <time class="published updated" datetime="2006-12-27">
-          2006-12-27</time> by
-        <a href="https://plus.google.com/106366683920288141812?rel=author"
-           rel="author" class="fn" lang="en">Motoma</a>, tagged as
-        
-        <a href="/tags/conversion">conversion</a>
-        
-        <a href="/tags/ipod">ipod</a>
-        
-        <a href="/tags/mp3-player">mp3 player</a>
-        
-        <a href="/tags/usb">usb</a>
-        
-        <a href="/tags/video">video</a>
-        
-	
-      </p>
-      
-<p>Soon after buying my Video iPod, I wanted to put my massive library of videos onto it, so I could watch them on long trips without carrying along my entire laptop. I wrote a small shell script to perform the mundane task of converting for me, using the free, open-source tool ffmpeg (<a href="http://ffmpeg.org">http://ffmpeg.org</a>).</p>
-
-
-    </article>
-
-
-
-    <div class="page">
-      <div class="nav_older">
-        
-      </div>
-    </div>
-
-
+    {% block content %}
+    {% endblock %}
   </section>
 
   <aside>
     <section class="projects">
       <ul>
-	
-	<li class="odd">
-	  <a href="https://www.github.com/Motoma/bitgirl">BitGirl</a>
-	  <p>BitGirl is a fully pluggable Python-based IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly.</p>
+	{% for project in projects %}
+	<li class="{{ loop.cycle('odd', 'even') }}">
+	  <a href="{{ project.url }}">{{ project.title }}</a>
+	  <p>{{ project.blurb }}</p>
 	</li>
-	
-	<li class="even">
-	  <a href="https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
-	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
-	</li>
-	
-	<li class="odd">
-	  <a href="http://sourceforge.net/projects/pyloris/">PyLoris</a>
-	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
-	</li>
-	
+	{% endfor %}
       </ul>
     </section>
 
