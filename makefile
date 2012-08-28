@@ -1,5 +1,5 @@
 DATE=`date -Iminutes`
-MSG="$(DATE) - Automatic commit from build"
+MSG=$(DATE) - Automatic commit from build
 
 all: build deploy commit
 
