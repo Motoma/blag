@@ -1,15 +1,14 @@
 {% extends "base.html" %}
 {% block head %}
-  <title>Motoma.io &raquo; About</title>
+  <title>{{ about.title|striptags }}</title>
 
   <meta name="keywords"
         content="Motoma, programming, hacking, python, linux" />
   <meta name="description"
-        content="A topical web log about computers, programming, and life in
-                 the digital age." />
+        content="{{ about.data|striptags }}" />
 {% endblock %}
 {% block content %}
-    <article>
+    <article class="vcard">
       <h3>{{ about.title }}</h3>
       {{ about.data|safe }}
     </article>
