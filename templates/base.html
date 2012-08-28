@@ -35,6 +35,7 @@
   </header>
 
   <nav>
+    {% block nav %}
     <ul>
       <li class="link">
         <a href="/about/" title="Learn more about me" class="link">About</a>
@@ -44,6 +45,7 @@
         <a href="/" title="Goto the blog" class="current">Blog</a>
       </li>
     </ul>
+    {% endblock %}
 
     <section>
       <a href="http://www.linkedin.com/in/motoma">

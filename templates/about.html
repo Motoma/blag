@@ -7,6 +7,17 @@
   <meta name="description"
         content="{{ about.data|striptags }}" />
 {% endblock %}
+{% block nav %}
+    <ul>
+      <li class="link">
+        <a href="/about/" title="Learn more about me" class="current">About</a>
+      </li>
+
+      <li class="current">
+        <a href="/" title="Goto the blog" class="link">Blog</a>
+      </li>
+    </ul>
+{% endblock %}
 {% block content %}
     <article class="vcard">
       <h3>{{ about.title }}</h3>
