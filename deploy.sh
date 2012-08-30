@@ -17,5 +17,6 @@ tar -zxf www.tgz -C /var/www/motoma.io
 tar -zxf static.tgz -C /var/www/motoma.io
 mv /var/www/motoma.io/static/favicon.ico /var/www/motoma.io/
 mv /var/www/motoma.io/static/robots.txt /var/www/motoma.io/
+mv /var/www/motoma.io/static/motoma.asc /var/www/motoma.io/
 rm static.tgz www.tgz
 EOF
