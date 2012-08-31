@@ -1,17 +1,20 @@
 DATE=`date -Iminutes`
 MSG=$(DATE) - Automatic commit from build
+PYTHON=python
+SH=sh
+GIT=git
 
 all: build deploy commit
 
 dev: build deploy
 
 build:
-	python build.py
+	$(PYTHON) build.py
 
 deploy:
-	sh deploy.sh
+	$(SH) deploy.sh
 
 commit:
-	git add .
-	git commit -a -m "$(MSG)"
+	$(GIT) add .
+	$(GIT) commit -a -m "$(MSG)"
 
