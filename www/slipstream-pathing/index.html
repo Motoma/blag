@@ -11,6 +11,7 @@
 	content="I completed the path-finding algorithm today. At its simplest level it is merely a Breadth-First Search on an undirected graph. This has a number of benefits: The code is short: The entire traversal algorithm takes up no more than 20 lines of code. The code is fast: Due to the method in which parental assignment occurs, the traversal takes place in O(n) time. Another benefit of the BFS algorithm is that the time to find one path is based on the number of vertexes, not the complexity of the graph itself; therefore, a difficult maze will be solved in the same amount of time as a wide open field. Vertex adjacency can be arbitrarily assigned: The system has no concept of dimensional space, only vertex adjacency. Further, there are no limitations on the number of adjacent vertexes any particular vertex can have. Additionally, these vertexes could conceivably be in an entirely different section of a map (i.e. a teleporter) or in the exact same position allowing two entities to occupy the same location in space at the same time. The path-finding engine will correctly handle these situations. Mapping is not limited to a set number of dimensions, nor is it restricted to the Cartesian coordinate system: The path-finding system and the logical representation of the nodes are not reliant on each other. The path-finding algorithm works as well in a Cartesian coordinate system as it does in a Polar system. It can be as easily applied to an Isometric tile set as it can to the 4 dimensions of a hyper-cube; the concept of space, as well as its relationship to paths, are up to the programmer's design. One traversal of the graph finds the shortest path from any location in the map: My implementation of the BFS algorithm will traverse all vertexes in a map, assigning pointers to parent nodes to denote how any particular vertex was reached. At the end of a traversal, the graph is left in such a state that from any given node you can follow the parent path back through the graph and arrive at the origin. The benefit of this feature is that for any given target on any given graph, the traversal needs only to happen once. The immediate benefit of this is that if I were making a number of entities move to the same position, I would need only to give them the path map, and by looking up their position on the map, a parent traversal for each entity would land them at their destination. With all that said, I am now in the process of rewriting the code. The major pitfall of the engine as it is right now is the lack of support for weighted graphs. To add to the robustness of the path-finding procedure, I am going to implement Dijkstra's Shortest Path Algorithm. This will allow the engine to take into account the difficulties of passing through certain terrains." />
 
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-language" content="en-US" />
   <meta name="generator" content="Blagmaster" />
   <meta name="google-site-verification"
         content="fpiMFEd5SHR15hcV7NKYxnCoqx3zGOOC-iqaJdArezw" />
@@ -45,18 +46,19 @@
     
 
     <section>
-      <a href="/motoma.asc"><img src="/static/gpg.png" /></a>
+      <a href="/motoma.asc">
+	<img src="/static/gpg.png" alt="GPG Public Key" /></a>
       <a href="http://www.linkedin.com/in/motoma" rel="me">
-	<img src="/static/linkedin.png" /></a>
+	<img src="/static/linkedin.png" alt="LinkedIn"/></a>
       <a href="http://www.facebook.com/motoma" rel="me">
-	<img src="/static/facebook.png" /></a>
+	<img src="/static/facebook.png" alt="Facebook"/></a>
       <a href="http://www.twitter.com/motoma" rel="me">
-	<img src="/static/twitter.png" /></a>
+	<img src="/static/twitter.png" alt="Twitter" /></a>
       <a href="https://plus.google.com/106366683920288141812?rel=author"
 	 rel="me">
-	<img src="/static/gplus.png" /></a>
+	<img src="/static/gplus.png" alt="Google+"/></a>
       <a href="http://www.github.com/motoma" rel="me">
-	<img src="/static/github.png" /></a>
+	<img src="/static/github.png" alt="GitHub"/></a>
     </section>
   </nav>
 
