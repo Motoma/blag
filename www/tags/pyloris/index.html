@@ -4,7 +4,7 @@
 <head lang="en">
   
   <title>Motoma.io &raquo;
-     posts tagged as hacking
+     posts tagged as pyloris
     
   </title>
 
@@ -71,65 +71,46 @@
 
     <article class="hentry">
       <h3>
-        <a href="/eve/" class="entry-title">Eve</a>
+        <a href="/pyloris/" class="entry-title">PyLoris</a>
       </h3>
       <p class="byline author vcard instapaper_ignore entry-unrelated">
-        <time class="published updated" datetime="2007-05-24">
-          2007-05-24</time> by
+        <time class="published updated" datetime="2009-06-19">
+          2009-06-19</time> by
         <a href="http://motoma.io/about/" rel="author" class="fn nickname url"
 	   lang="en">Motoma</a>, tagged as
         
-        <a href="/tags/bad-software" rel="tag">
-	  bad software</a>
+        <a href="/tags/pyloris" rel="tag">
+	  PyLoris</a>
+        
+        <a href="/tags/python" rel="tag">
+	  Python</a>
         
         <a href="/tags/hacking" rel="tag">
-	  hacking</a>
+	  Hacking</a>
         
-        <a href="/tags/microsoft" rel="tag">
-	  microsoft</a>
+        <a href="/tags/denial-of-service" rel="tag">
+	  Denial of Service</a>
+        
+        <a href="/tags/linux" rel="tag">
+	  Linux</a>
+        
+        <a href="/tags/mac-os-x" rel="tag">
+	  Mac OS X</a>
         
         <a href="/tags/networking" rel="tag">
 	  networking</a>
         
-        <a href="/tags/rant" rel="tag">
-	  rant</a>
-        
-        <a href="/tags/windows" rel="tag">
-	  windows</a>
-        
-	
-      </p>
-      
-<p>While stomping around the <a href=http://cultdeadcow.com/cms/main.php3>cDc blog</a>, I came across the <a href=http://www.whitedust.net/eve/>Eve</a>. Eve is a network traffic analyzer which gifts its users with a 3D visual representation of the network traffic as it is happening. To be honest the moment I read this a little part of me screamed for joy. I rushed through the site and downloaded the <a href=http://www.whitedust.net/eve/download.php>trial version</a>.</p>
-
-
-    </article>
-
-    <article class="hentry">
-      <h3>
-        <a href="/decompilation-gets-real-scary/" class="entry-title">Decompilation gets real...scary</a>
-      </h3>
-      <p class="byline author vcard instapaper_ignore entry-unrelated">
-        <time class="published updated" datetime="2007-04-17">
-          2007-04-17</time> by
-        <a href="http://motoma.io/about/" rel="author" class="fn nickname url"
-	   lang="en">Motoma</a>, tagged as
-        
-        <a href="/tags/hacking" rel="tag">
-	  hacking</a>
-        
-        <a href="/tags/kernel" rel="tag">
-	  kernel</a>
-        
         <a href="/tags/programming" rel="tag">
 	  programming</a>
         
+        <a href="/tags/windows" rel="tag">
+	  Windows</a>
+        
 	
       </p>
       
-<p>Ilfak Guilfanov of DataRescue Inc (the people behind <a href="http://www.datarescue.com/idabase/">IDA Pro</a>) has posted an entry on his <a href="http://hexblog.com"]Hex Blog</a> titled <a href="http://hexblog.com/2007/04/decompilation_gets_real.html">Decompilation Gets Real</a>. In it he announces the beta testing of a tool which, when given a binary file, produces accurate and well formatted C code. The immediate consequence of such a tool is the further reduction of the level of knowledge which a would-be hacker must have. Since compilers and assemblers have a distinct optimization fingerprint, it should not be long before automated tools, build from this code regeneration tool, will provide reverse-engineers and crackers with the ability to quickly and efficiently scrub through code for security weaknesses; buffer overflow, format string attacks, and any number of other exploits will be trivial to discover.</p>
+<p>PyLoris is a scriptable tool for testing a service's level of vulnerability to a particular class of Denial of Service (DoS) attack. Any service that places restrictions on the total number of simultaneous TCP connections has the potential for vulnerability to PyLoris. Additionally, services that handle connections in independent threads, services that poorly manage concurrent connections, and services that have high memory footprint per connection are prone to this form of vulnerability.</p>
 
-<p>The speed and easy in which Guilfanov is able to go through code is what scares me. Take a look at the <a href="http://hexblog.com/decompilation/video/vd1.html">Decompilation Demo</a>.</p>
 
     </article>
 
@@ -137,12 +118,6 @@
 
     <div class="page">
       <div class="nav_older">
-        
-      </div>
-
-      <div class="nav_newer">
-        
-        <a href="../">Newer &raquo;</a>
         
       </div>
     </div>
@@ -155,18 +130,18 @@
       <ul>
 	
 	<li class="odd">
-	  <a href="https://www.github.com/Motoma/bitgirl">BitGirl</a>
-	  <p>BitGirl is a fully pluggable Python-based IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly.</p>
+	  <a href="/alice-release/">Alice</a>
+	  <p>A graph traversal implementation based loosely on the Breadth-First Search algorithm.</p>
 	</li>
 	
 	<li class="even">
-	  <a href="https://code.google.com/p/socksipy-branch/">socksipy-branch</a>
-	  <p>A Python SOCKS client module This module was designed to allow developers of Python software that uses the Internet or another TCP/IP-based.</p>
+	  <a href="/network-raid-storage-proof-of-concept/">Network RAID</a>
+	  <p>A Linux-based proof-of-concept technique for building software-RAIDs across disparate networked volumes.</p>
 	</li>
 	
 	<li class="odd">
-	  <a href="http://sourceforge.net/projects/pyloris/">PyLoris</a>
-	  <p>PyLoris is a scriptable tool for testing a server's vulnerability to connection exhaustion denial of service (DoS) attacks.</p>
+	  <a href="https://www.github.com/Motoma/bitgirl">BitGirl</a>
+	  <p>BitGirl is a fully pluggable Python-based IRC bot which allows dynamic command and module loading, unloading, and reloading on the fly.</p>
 	</li>
 	
       </ul>
