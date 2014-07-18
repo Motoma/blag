@@ -29,6 +29,7 @@ def cdiv(num, denom):
 # Iterate over Python moduels in data directory and load them
 sys.path.append('./%s' % (DATA_DIR))
 modules = [mod[:-3] for mod in os.listdir(DATA_DIR) if mod[-3:] == '.py']
+modules.sort()
 for module in modules:
     if module == 'about':
         about = __import__(module)
@@ -47,7 +48,9 @@ for module in modules:
         posts[module] = post
 
     elif module[:7] == 'project':
+        print module
         projects.insert(0, __import__(module))
+
 
 # Begin rendering pages
 rmrf(WWW_DIR)
