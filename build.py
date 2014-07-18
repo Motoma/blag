@@ -48,7 +48,6 @@ for module in modules:
         posts[module] = post
 
     elif module[:7] == 'project':
-        print module
         projects.insert(0, __import__(module))
 
 

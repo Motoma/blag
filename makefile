@@ -15,6 +15,6 @@ deploy:
 	$(SH) deploy.sh
 
 commit:
-	$(GIT) add .
+	$(GIT) add . --all
 	$(GIT) commit -a -m "$(MSG)"
 
