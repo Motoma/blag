@@ -1,0 +1,16 @@
+version: '2'
+services:
+  blag:
+    build: .
+    ports:
+    - "80:80"
+    restart: always
+  vpn:
+    image: kylemanna/openvpn
+    ports:
+    - "443:1194"
+    restart: always
+    volumes:
+    - /root/ovpn_conf:/etc/openvpn
+    cap_add:
+    - NET_ADMIN
