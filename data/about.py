@@ -4,7 +4,7 @@ data  = """
 
 <p>I develop in <a href="http://java.com/">Java</a>, <a href="http://www.php.net/">PHP</a>, and <a href="http://python.org/">Python</a>.</p>
 
-<p>I write the semi-topical blog <a href="http://motoma.io" class="url">Motoma.io</a>, focusing on software development and targeted at system administrators.</p>
+<p>I write the semi-topical blog <a href="https://motoma.io" class="url">Motoma.io</a>, focusing on software development and targeted at system administrators.</p>
 
 <p class="note">I am the creator of <a href="/pyloris/">PyLoris</a>, a scriptable, protocol-agnostic denial of service attack framework.</p>
 
