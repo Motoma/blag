@@ -16,5 +16,5 @@ deploy:
 
 commit:
 	$(GIT) add . --all
-	$(GIT) commit -a -m "$(MSG)"
+	$(GIT) commit -a -m "$(MSG)" --allow-empty
 
