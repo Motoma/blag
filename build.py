@@ -21,6 +21,7 @@ tags = {}
 def rmrf(path): os.system('rm -rf %s' % path)
 def mkdirp(path): os.system('mkdir -p %s' % path)
 def cp(src, dest): os.system('cp %s %s' % (src, dest))
+def cpr(src, dest): os.system('cp -R %s %s' % (src, dest))
 
 # round up division: 1/2=1 2/2=1 3/2=2
 def cdiv(num, denom):
@@ -64,6 +65,8 @@ env.globals['quote'] = quote.text
 # Begin rendering pages
 rmrf(WWW_DIR)
 mkdirp(WWW_DIR)
+cpr(WWW_STATIC, WWW_DIR)
+cp(WWW_ROOT_ASSETS, WWW_DIR)
 
 # Render About page
 mkdirp('%s/about' % (WWW_DIR))
